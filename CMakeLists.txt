@@ -25,6 +25,11 @@ if(FCGI_FOUND)
     INCLUDE_DIRECTORIES(${FCGI_INCLUDE_DIRS})
 endif()
 
+find_package(DBUS REQUIRED)
+if(DBUS_FOUND)
+    INCLUDE_DIRECTORIES(${DBUS_INCLUDE_DIRS})
+endif()
+
 INCLUDE_DIRECTORIES(
 	src/${PROJECT_NAME}/
 	src/json/src/
@@ -36,16 +41,17 @@ add_library(
 	STATIC
 
 	src/${PROJECT_NAME}/${PROJECT_NAME}.cpp
+        src/${PROJECT_NAME}/dispatcher.cpp
+        src/${PROJECT_NAME}/networkconfig.cpp
 )
 
 target_link_libraries(
 	${PROJECT_NAME}_lib
 
 	fcgi
-	pthread
+        dbus-1
 )
 
-# urlmanager
 add_executable(
 	${PROJECT_NAME}
 	

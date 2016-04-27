@@ -7,6 +7,8 @@
 // fastcgi C lib
 #include <fcgiapp.h>
 
+#include "fastcginetworkconfig.h"
+
 int main(int argc, char* argv[])
 {
 	try
@@ -27,6 +29,9 @@ int main(int argc, char* argv[])
 			}
 		}
 		
+        FastCGINetworkConfig app(nThreads);
+        app.init();
+        app.read();
 
 		FCGX_Finish();
 	}
