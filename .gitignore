@@ -29,7 +29,6 @@
 
 # Cmake
 build/
-cmake/
 CPackOptions.cmake.in
 *build
 *.user
