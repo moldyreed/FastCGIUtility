@@ -1,14 +1,14 @@
-#include "fastcginetworkconfig.h"
+#include "fastcgi.h"
 
 #include <unistd.h>
 #include "dispatcher.h"
 
-FastCGINetworkConfig::FastCGINetworkConfig(const int nThreads):
+FastCGI::FastCGI(const int nThreads):
 	_nThreads(nThreads)
 {
 }
 
-void FastCGINetworkConfig::init()
+void FastCGI::init()
 {
 	_socketId = FCGX_OpenSocket(SOCKET_PATH, FASTCGI_LIMIT);
 
@@ -17,11 +17,11 @@ void FastCGINetworkConfig::init()
 
 	for (int i = 0 ; i < _nThreads; i++)
 	{
-		_threads.push_back(std::thread(&FastCGINetworkConfig::read, this));
+        _threads.push_back(std::thread(&FastCGI::read, this));
 	}
 }
  
-void FastCGINetworkConfig::read()
+void FastCGI::read()
 {
 	int rc;
 	FCGX_Request request;

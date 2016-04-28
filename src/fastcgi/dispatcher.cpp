@@ -62,4 +62,5 @@ bool Dispatcher::registerPathForFunction(const std::string& pathPattern, std::fu
 		return false;
 
 	_pathsFunctions.emplace(pathPattern, func);
+    return true;
 }

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(fastcginetworkconfig CXX)
+project(fastcgi CXX)
 
 # use cmake -DCMAKE_BUILD_TYPE=Release .. to build release
 
@@ -40,7 +40,7 @@ add_library(
 
 	STATIC
 
-	src/${PROJECT_NAME}/${PROJECT_NAME}.cpp
+        src/${PROJECT_NAME}/fastcgi.cpp
 	src/${PROJECT_NAME}/dispatcher.cpp
 	src/${PROJECT_NAME}/networkconfig.cpp
 )

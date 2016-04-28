@@ -1,5 +1,5 @@
-#ifndef FASTCGINETWORKCONFIG_H
-#define FASTCGINETWORKCONFIG_H
+#ifndef FastCGI_H
+#define FastCGI_H
 
 #include <iostream>
 #include <vector>
@@ -11,10 +11,10 @@
 #define SOCKET_PATH "127.0.0.1:9000"
 #define FASTCGI_LIMIT 20
 
-class FastCGINetworkConfig
+class FastCGI
 {
 public:
-	FastCGINetworkConfig(const int nThreads);
+    FastCGI(const int nThreads);
 	void init();
 	void read();
 
@@ -27,4 +27,4 @@ private:
 
 };
 
-#endif // FASTCGINETWORKCONFIG_H
+#endif // FastCGI_H
