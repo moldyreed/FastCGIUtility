@@ -1,10 +1,11 @@
 # fastcginetworkconfig
 
-##Depencies
+##Dependencies
 
 fcgi >= 2.4  
 dbus >= 1.10  
 gcc >= 5.1  
+networkmanager >= 1.0
 
 ##Building
 ```
@@ -19,6 +20,17 @@ curl request example
 
 ```
 curl "localhost:9001/config"
+{
+    "gateway": "192.168.1.1",
+    "ip": "192.168.1.212",
+    "netmask": "255.255.252.0"
+}
+```
+
+wildcard request example  
+
+```
+curl "localhost:9001/v1/*/config"
 {
     "gateway": "192.168.1.1",
     "ip": "192.168.1.212",
