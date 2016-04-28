@@ -23,6 +23,7 @@ Use parameter -n to define thread number
 ```
 ./fastcgi -n4
 ```
+Do not forget to start DBus, NetworkMananger and nginx services!
 
 ## Usage
 curl request example  
