@@ -5,10 +5,13 @@
 fcgi >= 2.4  
 dbus >= 1.10  
 gcc >= 5.1  
+pkg-config  
 networkmanager >= 1.0
 
 ##Building
 ```
+git clone https://github.com/sickevilfuck/FastCGIUtility.git --recursive
+cd FastCGIUtility
 mkdir build
 cd build
 cmake ..
