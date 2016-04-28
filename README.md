@@ -15,6 +15,12 @@ cmake ..
 make
 ```
 
+##Start
+Use parameter -n to define thread number
+```
+./fastcgi -n4
+```
+
 ## Usage
 curl request example  
 
