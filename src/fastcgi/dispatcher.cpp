@@ -13,6 +13,12 @@ Dispatcher::Dispatcher()
 	registerPathForFunction("/v1/*/config", std::bind(&NetworkConfig::result));
 }
 
+/**
+ * @brief Reads req and call method for registred path
+ * @param req
+ * @return response json encoded string
+ */
+
 std::string Dispatcher::query(const FCGX_Request& req)
 {
 	// cut REQUEST_URI to ?
@@ -26,6 +32,7 @@ std::string Dispatcher::query(const FCGX_Request& req)
 		{
 			const std::string& path = pair.first;
 
+            // match path tand call method
 			if (fnmatch(path.c_str(), requestedPath.c_str(), 0) == 0)
 				return pair.second();
 		}
@@ -37,6 +44,11 @@ std::string Dispatcher::query(const FCGX_Request& req)
 
 	return "404";
 }
+
+/**
+ * @brief Dispatcher::availiblePaths
+ * @return returns set of registed paths
+ */
 
 std::set<std::string> Dispatcher::availiblePaths()
 {
@@ -50,11 +62,18 @@ std::set<std::string> Dispatcher::availiblePaths()
 	return result;
 }
 
+/**
+ * @brief Cuts query to path
+ * @param requestURI
+ * @return cutted string
+ */
+
 std::string Dispatcher::path(const std::string& requestURI)
 {
 	size_t queryBeginning = requestURI.find("?");
 	return requestURI.substr(0, queryBeginning);
 }
+
 
 bool Dispatcher::registerPathForFunction(const std::string& pathPattern, std::function<std::string()> func)
 {

@@ -21,6 +21,11 @@ void FastCGI::init()
 	}
 }
  
+/**
+ * @brief FastCGI::read
+ * @detailed Reads data from socket, thread safe and pooling thread by itself.
+ */
+
 void FastCGI::read()
 {
 	int rc;

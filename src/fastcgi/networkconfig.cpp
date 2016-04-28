@@ -13,6 +13,11 @@
 
 static const char* dev = "org.freedesktop.NetworkManager.IP4Config";
 
+/**
+ * @brief NetworkConfig::result
+ * @return returns json ecnoded string with gateway, ip and netmask
+ */
+
 std::string NetworkConfig::result()
 {
 	std::unique_ptr<DBusConnection, void (*)(DBusConnection*)> conn(dbus_bus_get(DBUS_BUS_SYSTEM, NULL), dbus_connection_unref);
@@ -121,6 +126,12 @@ std::string NetworkConfig::result()
 	};
 	return _json.dump(4);
 }
+
+/**
+ * @brief NetworkConfig::CIDRLongToString convert bitmask to string
+ * @param maskbits
+ * @return ip address
+ */
 
 std::string NetworkConfig::CIDRLongToString(const long maskbits)
 {

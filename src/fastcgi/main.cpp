@@ -17,14 +17,18 @@ int main(int argc, char* argv[])
 			throw std::runtime_error("Can't initilize FastCGI library.");
 
 		int opt;
-		int nThreads = 5;
+        int nThreads = 4;
 
 		while ((opt = getopt(argc, argv, "n:")) != -1)
 		{
 			switch (opt)
 			{
 				case 'n':
-					nThreads = std::atoi(optarg);
+                    _threads = std::atoi(optarg);
+                    if( _threads > 0 )
+                        nThreads = _threads;
+                    else
+                        throw std::runtime_error("wrong -n parameter");
 					break;
 			}
 		}
