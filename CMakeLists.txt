@@ -65,11 +65,7 @@ target_link_libraries(
 	${PROJECT_NAME}_lib
 )
 
-if (CMAKE_BUILD_TYPE MATCHES DEBUG)
-	message("tests enabled")
-
-	add_subdirectory(src/gtest/googletest)
-	add_subdirectory(src/${PROJECT_NAME}/tests)
-endif()
+add_subdirectory(src/gtest)
+add_subdirectory(src/${PROJECT_NAME}/tests)
 
 install(TARGETS ${PROJECT_NAME} DESTINATION "bin")

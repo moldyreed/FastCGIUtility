@@ -11,6 +11,8 @@ class NetworkConfig
 {
 public:
 	static std::string result();
+private:
+	static std::string CIDRLongToString(const long mask);
 };
 
 #endif // NETWORKCONFIG_H

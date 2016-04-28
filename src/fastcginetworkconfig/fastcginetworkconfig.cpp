@@ -20,7 +20,7 @@ void FastCGINetworkConfig::init()
 		_threads.push_back(std::thread(&FastCGINetworkConfig::read, this));
 	}
 }
-
+ 
 void FastCGINetworkConfig::read()
 {
 	int rc;
@@ -41,7 +41,7 @@ void FastCGINetworkConfig::read()
 
 		std::cout << std::this_thread::get_id() << std::endl;
 		FCGX_PutS("\r\n", request.out);
-		const std::string& result = Dispatcher::query(request);
+		const std::string& result = Dispatcher::sharedInstance().query(request);
 		FCGX_PutS(result.c_str(), request.out);
 		FCGX_PutS("\r\n", request.out);
 		FCGX_Finish_r(&request);
