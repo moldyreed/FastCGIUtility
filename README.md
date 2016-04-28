@@ -1,4 +1,4 @@
-# fastcginetworkconfig
+# FastCGIUtility
 
 ##Dependencies
 
