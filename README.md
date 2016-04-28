@@ -1,7 +1,20 @@
 # fastcginetworkconfig
 
+##Depencies
 
+fcgi >= 2.4  
+dbus >= 1.10  
+gcc >= 5.1  
 
+##Building
+```
+mkdir build
+cd build
+cmake ..
+make
+```
+
+## Usage
 curl request example  
 
 ```
