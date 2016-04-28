@@ -6,7 +6,7 @@ fcgi >= 2.4
 dbus >= 1.10  
 gcc >= 5.1  
 pkg-config  
-networkmanager >= 1.0
+networkmanager >= 1.0  
 cmake >= 2.8
 
 ##Building
