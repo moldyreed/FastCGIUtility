@@ -2,6 +2,6 @@
 
 std::string NetworkConfig::result()
 {
-    json _json{{"u","1"},{"dsda","dasd"}};
-    return _json.dump(4);
+	json _json{{"u", "1"}, {"dsda", "dasd"}};
+	return _json.dump(4);
 }

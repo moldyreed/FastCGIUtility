@@ -41,15 +41,16 @@ add_library(
 	STATIC
 
 	src/${PROJECT_NAME}/${PROJECT_NAME}.cpp
-        src/${PROJECT_NAME}/dispatcher.cpp
-        src/${PROJECT_NAME}/networkconfig.cpp
+	src/${PROJECT_NAME}/dispatcher.cpp
+	src/${PROJECT_NAME}/networkconfig.cpp
 )
 
 target_link_libraries(
 	${PROJECT_NAME}_lib
 
 	fcgi
-        dbus-1
+	dbus-1
+	pthread
 )
 
 add_executable(

@@ -10,7 +10,7 @@ typedef nlohmann::json json;
 class NetworkConfig
 {
 public:
-    static std::string result();
+	static std::string result();
 };
 
 #endif // NETWORKCONFIG_H

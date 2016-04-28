@@ -28,11 +28,10 @@ int main(int argc, char* argv[])
 					break;
 			}
 		}
-		
-        FastCGINetworkConfig app(nThreads);
-        app.init();
-        app.read();
 
+		FastCGINetworkConfig app(nThreads);
+		app.init();
+		app.read();
 		FCGX_Finish();
 	}
 	catch (std::exception& e)

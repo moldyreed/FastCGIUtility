@@ -7,9 +7,9 @@
 class Dispatcher
 {
 public:
-    static std::string query(const FCGX_Request& req);
+	static std::string query(const FCGX_Request& req);
 private:
-    static std::string path(const std::string& requestURI);
+	static std::string path(const std::string& requestURI);
 
 };
 

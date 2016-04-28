@@ -16,14 +16,14 @@ class FastCGINetworkConfig
 public:
 	FastCGINetworkConfig(const int nThreads);
 	void init();
-    void read();
+	void read();
 
 private:
 
-    std::vector<std::thread> _threads;
-    const int               _nThreads;
-    int                     _socketId;
-    bool                    _run;
+	std::vector<std::thread> _threads;
+	const int               _nThreads;
+	int                     _socketId;
+	bool                    _run;
 
 };
 
