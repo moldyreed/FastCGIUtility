@@ -1,4 +1,5 @@
 # FastCGIUtility
+Cuncurrent utility returns network settings in json format through FastCGI. Network settings provided by NetworkManager via dbus. 
 
 ##Dependencies
 
