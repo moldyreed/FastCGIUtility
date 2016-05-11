@@ -1,5 +1,5 @@
 # FastCGIUtility
-Cuncurrent utility returns network settings in json format through FastCGI written in C++11. Network settings provided by NetworkManager via dbus. 
+Concurrent utility returns network settings in json format through FastCGI written in C++11. Network settings provided by NetworkManager via dbus. 
 
 ##Dependencies
 
